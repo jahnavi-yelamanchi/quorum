@@ -10,6 +10,7 @@ from pathlib import Path
 
 from .monitor import lifecycle
 from .resolver import Document, resolve
+from .geo import load_parcels, resolve_parcel
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "cb6_documents.json"
@@ -19,13 +20,16 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--documents", type=Path, default=RAW)
     parser.add_argument("--output", type=Path, default=OUT)
+    parser.add_argument("--parcels", type=Path, default=ROOT / "data" / "pluto_fixture.geojson")
     args = parser.parse_args()
     raw = json.loads(args.documents.read_text())
     documents = [Document(**document) for document in raw]
+    parcels = load_parcels(args.parcels)
     records = []
     for item in resolve(documents):
         events = lifecycle(item)
         latest = events[-1]
+        geo = resolve_parcel(item.address or "", parcels)
         records.append({
             "id": item.id,
             "title": item.title,
@@ -36,6 +40,10 @@ def main() -> None:
             "evidence": latest.excerpt,
             "source_url": item.evidence[-1].source_url,
             "lifecycle": [event.__dict__ for event in events],
+            "bbl": geo.parcel.bbl if geo.parcel else None,
+            "longitude": geo.parcel.longitude if geo.parcel else None,
+            "latitude": geo.parcel.latitude if geo.parcel else None,
+            "geo_confidence": geo.confidence,
         })
     args.output.write_text(json.dumps(records, indent=2) + "\n")
     print(f"Wrote {len(records)} evidence-backed items to {args.output.relative_to(ROOT)}")

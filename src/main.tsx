@@ -14,6 +14,8 @@ type Item = {
   x: number;
   y: number;
   confidence: number;
+  bbl?: string | null;
+  geo_confidence?: number;
   excerpt: string;
   source: string;
 };
@@ -40,7 +42,7 @@ const fallbackItems: Item[] = [
 const lifecycle = ["Scheduled", "Heard", "Deferred", "Decision"];
 const docs = ["Committee agenda", "Applicant materials", "Meeting minutes", "Public testimony"];
 
-type ApiItem = Pick<Item, "id" | "title" | "address" | "status" | "confidence"> & { category: string; evidence: string; lifecycle?: { date: string }[] };
+type ApiItem = Pick<Item, "id" | "title" | "address" | "status" | "confidence" | "bbl" | "geo_confidence"> & { category: string; evidence: string; lifecycle?: { date: string }[] };
 
 function MapCanvas({ items, selected, onSelect }: { items: Item[]; selected: Item; onSelect: (item: Item) => void }) {
   return <section className="map" aria-label="Community Board 6 decision map">
@@ -62,7 +64,7 @@ function Detail({ item }: { item: Item }) {
     <h2>{item.title}</h2>
     <p className="case">CB6 item · {item.id.toUpperCase()}</p>
     <div className="lifecycle">{lifecycle.map((label, index) => <div className={index <= stage ? "done" : ""} key={label}><i>{index < stage ? "✓" : index + 1}</i><b>{label}</b></div>)}</div>
-    <dl><div><dt>Near</dt><dd>{item.address}<br />{item.neighborhood}<br /><em>{item.distance}</em></dd></div><div><dt>Next signal</dt><dd>{item.date}</dd></div></dl>
+    <dl><div><dt>Near</dt><dd>{item.address}<br />{item.neighborhood}<br /><em>{item.distance}</em></dd></div>{item.bbl && <div><dt>Parcel</dt><dd>{item.bbl}<br /><em>geo confidence {item.geo_confidence}%</em></dd></div>}<div><dt>Next signal</dt><dd>{item.date}</dd></div></dl>
     <div className="excerpt"><span>Evidence excerpt</span><p>“{item.excerpt}”</p><small>— {item.source}</small></div>
     <button className="source-button">Open source evidence <span>↗</span></button>
   </aside>;

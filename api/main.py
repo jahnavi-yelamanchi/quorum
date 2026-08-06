@@ -26,6 +26,10 @@ class Item(BaseModel):
     confidence: int = Field(ge=0, le=100)
     evidence: str
     source_url: str
+    bbl: str | None = None
+    longitude: float | None = None
+    latitude: float | None = None
+    geo_confidence: int = 0
 
 class Interest(BaseModel):
     address: str = Field(min_length=5, max_length=200)

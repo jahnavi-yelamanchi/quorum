@@ -27,7 +27,11 @@
         "state": "deferred",
         "excerpt": "CB6-2026-17 deferred pending an amended operations plan."
       }
-    ]
+    ],
+    "bbl": "1009080050",
+    "longitude": -73.98172000000001,
+    "latitude": 40.74148,
+    "geo_confidence": 99
   },
   {
     "id": "350-madison-avenue",
@@ -45,6 +49,10 @@
         "state": "heard",
         "excerpt": "ULURP C 260247 ZMM heard by the Land Use Committee."
       }
-    ]
+    ],
+    "bbl": "1008620001",
+    "longitude": -73.97952000000001,
+    "latitude": 40.75228,
+    "geo_confidence": 99
   }
 ]

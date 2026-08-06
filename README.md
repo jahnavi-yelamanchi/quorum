@@ -31,6 +31,10 @@ The resolver groups agenda aliases by civic ID, address, and title similarity, r
 
 The checked-in documents are versioned development fixtures pointing to the CB6 public source. The production adapter should replace only `data/cb6_documents.json`; the resolver and API contract remain unchanged.
 
+## Add MapPLUTO parcels
+
+Export the relevant MapPLUTO parcels as GeoJSON, or provide a CSV with `BBL`, `Address`, `Longitude`, and `Latitude` columns. Then build with `python3 -m pipeline.build_snapshot --parcels var/parcels/cb6.geojson`. Exact addresses attach a BBL and map point at 99% confidence; weak matches remain unresolved and never become alert-eligible.
+
 ## Ingest source files
 
 ```bash

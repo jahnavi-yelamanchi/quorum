@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"BBL": "1009080050", "Address": "213 East 27th Street"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-73.9818, 40.7414], [-73.9816, 40.7414], [-73.9816, 40.7416], [-73.9818, 40.7416], [-73.9818, 40.7414]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"BBL": "1008620001", "Address": "350 Madison Avenue"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-73.9796, 40.7522], [-73.9794, 40.7522], [-73.9794, 40.7524], [-73.9796, 40.7524], [-73.9796, 40.7522]]]}
+    }
+  ]
+}
