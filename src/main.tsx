@@ -91,8 +91,9 @@ function App() {
   const [saveError, setSaveError] = useState("");
   const [alertCount, setAlertCount] = useState(0);
   const [showMethod, setShowMethod] = useState(false);
-  const endpoint = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+  const endpoint = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://127.0.0.1:8000" : "");
   useEffect(() => {
+    if (!endpoint) return;
     fetch(`${endpoint}/items`)
       .then((response) => response.ok ? response.json() : Promise.reject(response.statusText))
       .then((records: ApiItem[]) => {
