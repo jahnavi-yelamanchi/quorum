@@ -8,6 +8,7 @@ client = TestClient(app)
 items = client.get("/items")
 assert items.status_code == 200
 assert all(item["confidence"] >= 90 and item["evidence"] for item in items.json())
+assert client.get("/api/items").status_code == 200
 
 relationships = client.get(f"/items/{items.json()[0]['id']}/relationships")
 assert relationships.status_code == 200

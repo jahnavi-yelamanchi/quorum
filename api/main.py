@@ -6,11 +6,17 @@ import json
 import os
 from pathlib import Path
 from typing import Literal
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from monitor import sync
-from storage import connection
+try:
+    from .monitor import sync
+    from .storage import connection
+    from .supabase_store import SupabaseStore
+except ImportError:  # Local `uvicorn --app-dir api` execution.
+    from monitor import sync
+    from storage import connection
+    from supabase_store import SupabaseStore
 
 app = FastAPI(title="Quorum API", version="0.1.0")
 app.add_middleware(
@@ -19,6 +25,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+supabase = SupabaseStore.from_env()
+
+@app.middleware("http")
+async def vercel_api_prefix(request: Request, call_next):
+    if request.scope["path"].startswith("/api/"):
+        request.scope["path"] = request.scope["path"][4:]
+    return await call_next(request)
 
 class Item(BaseModel):
     id: str
@@ -86,6 +99,8 @@ def get_review_queue() -> list[dict[str, str | int]]:
 
 @app.post("/saved-places")
 def save_place(interest: Interest) -> dict[str, str | int | float | None]:
+    if supabase:
+        return {**supabase.save_place(interest.model_dump()), "status": "saved"}
     database = connection()
     cursor = database.execute("INSERT INTO saved_places (user_id, address, latitude, longitude, radius_meters) VALUES (?, ?, ?, ?, ?)", (interest.user_id, interest.address, interest.latitude, interest.longitude, interest.radius_meters))
     database.commit()
@@ -93,17 +108,23 @@ def save_place(interest: Interest) -> dict[str, str | int | float | None]:
 
 @app.get("/saved-places")
 def saved_places(user_id: str = "demo") -> list[dict]:
+    if supabase:
+        return supabase.places(user_id)
     database = connection()
     return [dict(row) for row in database.execute("SELECT * FROM saved_places WHERE user_id = ? ORDER BY id DESC", (user_id,))]
 
 @app.post("/monitor/sync")
 def sync_monitor(user_id: str = "demo") -> dict[str, int]:
+    if supabase:
+        return {"alerts_created": supabase.sync(user_id, [item.model_dump() for item in items()])}
     database = connection()
     places = database.execute("SELECT * FROM saved_places WHERE user_id = ?", (user_id,)).fetchall()
     return {"alerts_created": sync(database, places, [item.model_dump() for item in items()])}
 
 @app.get("/alerts")
 def alerts(user_id: str = "demo") -> list[dict]:
+    if supabase:
+        return supabase.alerts(user_id)
     database = connection()
     query = """SELECT alerts.id, alerts.item_id, alerts.status, alerts.created_at, saved_places.address
       FROM alerts JOIN saved_places ON saved_places.id = alerts.place_id
