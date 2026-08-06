@@ -19,4 +19,13 @@ python3 -m venv .venv
 
 The UI is self-contained so it can be previewed without the API. The API exposes evidence-backed demo items at `GET /items` and validates saved-place input at `POST /saved-places`.
 
-The current records are a curated presentation seed. Replacing them with a real snapshot is intentionally isolated to the ingestion/resolution layer, so the public UI and API contract remain stable.
+## Build the civic snapshot
+
+```bash
+python3 -m pipeline.build_snapshot
+python3 -m pipeline.check
+```
+
+The resolver groups agenda aliases by civic ID, address, and title similarity, retains the original document evidence, and turns each item into a lifecycle. It only permits an alert for a high-confidence address match at an approved, denied, or closed decision state.
+
+The checked-in documents are versioned development fixtures pointing to the CB6 public source. The production adapter should replace only `data/cb6_documents.json`; the resolver and API contract remain unchanged.

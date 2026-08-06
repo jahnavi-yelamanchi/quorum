@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cb6-2026-17",
+    "title": "New liquor license: East 27th Street",
+    "category": "licensing",
+    "address": "213 East 27th Street",
+    "status": "deferred",
+    "confidence": 99,
+    "evidence": "CB6-2026-17 deferred pending an amended operations plan.",
+    "source_url": "https://www.nyc.gov/site/manhattancb6/index.page",
+    "lifecycle": [
+      {
+        "item_id": "cb6-2026-17",
+        "date": "2026-06-18",
+        "state": "scheduled",
+        "excerpt": "CB6-2026-17 scheduled for committee review."
+      },
+      {
+        "item_id": "cb6-2026-17",
+        "date": "2026-07-16",
+        "state": "heard",
+        "excerpt": "CB6-2026-17 heard by the Business Affairs Committee."
+      },
+      {
+        "item_id": "cb6-2026-17",
+        "date": "2026-08-20",
+        "state": "deferred",
+        "excerpt": "CB6-2026-17 deferred pending an amended operations plan."
+      }
+    ]
+  },
+  {
+    "id": "350-madison-avenue",
+    "title": "East Midtown Special District",
+    "category": "land_use",
+    "address": "350 Madison Avenue",
+    "status": "heard",
+    "confidence": 93,
+    "evidence": "ULURP C 260247 ZMM heard by the Land Use Committee.",
+    "source_url": "https://www.nyc.gov/site/manhattancb6/index.page",
+    "lifecycle": [
+      {
+        "item_id": "350-madison-avenue",
+        "date": "2026-09-12",
+        "state": "heard",
+        "excerpt": "ULURP C 260247 ZMM heard by the Land Use Committee."
+      }
+    ]
+  }
+]
