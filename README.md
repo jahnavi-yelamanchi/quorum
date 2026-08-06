@@ -35,6 +35,8 @@ The checked-in documents are versioned development fixtures pointing to the CB6 
 
 Export the relevant MapPLUTO parcels as GeoJSON, or provide a CSV with `BBL`, `Address`, `Longitude`, and `Latitude` columns. Then build with `python3 -m pipeline.build_snapshot --parcels var/parcels/cb6.geojson`. Exact addresses attach a BBL and map point at 99% confidence; weak matches remain unresolved and never become alert-eligible.
 
+Run `python3 -m pipeline.review` to export unresolved entity/parcel links into the operator review queue. The API exposes the same list at `GET /review-queue`; it is intentionally not part of the public alert flow.
+
 ## Ingest source files
 
 ```bash

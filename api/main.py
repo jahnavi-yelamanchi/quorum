@@ -70,6 +70,14 @@ def item_relationships(item_id: str) -> dict[str, list[dict[str, str]]]:
             edges.append({"from": item.id, "to": node_id, "kind": kind})
     return {"nodes": nodes, "edges": edges}
 
+@app.get("/review-queue")
+def get_review_queue() -> list[dict[str, str | int]]:
+    return [
+        {"item_id": item.id, "title": item.title, "entity_confidence": item.confidence, "geo_confidence": item.geo_confidence,
+         "reason": "unresolved parcel" if item.geo_confidence < 90 else "low entity confidence"}
+        for item in items() if item.confidence < 90 or item.geo_confidence < 90
+    ]
+
 @app.post("/saved-places")
 def save_place(interest: Interest) -> dict[str, str | int]:
     # ponytail: demo persistence is intentionally client-side; add Postgres only for multi-user accounts.
