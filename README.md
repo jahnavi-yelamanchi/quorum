@@ -35,10 +35,10 @@ People find out about a rezoning, construction project, street redesign, or liqu
 
 ```mermaid
 flowchart LR
-  A[NYC public sources<br/>DOB + agendas + PDFs + recordings] --> B[Ingest]
-  B --> C[Extract<br/>text / OCR / ASR]
+  A[NYC public sources] --> B[Ingest]
+  B --> C[Extract text, OCR, and ASR]
   C --> D[Resolver]
-  D --> E[Civic item graph<br/>case IDs · aliases · organizations · parcels]
+  D --> E[Civic item graph]
   E --> F[Snapshot API]
   F --> G[Address matcher]
   G --> H[Lifecycle monitor]
