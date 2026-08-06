@@ -83,6 +83,14 @@ function Detail({ item }: { item: Item }) {
 }
 
 function App() {
+  const [userId] = useState(() => {
+    const key = "quorum-user-id";
+    const existing = localStorage.getItem(key);
+    if (existing) return existing;
+    const created = crypto.randomUUID();
+    localStorage.setItem(key, created);
+    return created;
+  });
   const [items, setItems] = useState(fallbackItems);
   const [selected, setSelected] = useState(fallbackItems[0]);
   const [saved, setSaved] = useState(false);
@@ -106,14 +114,14 @@ function App() {
         setSelected(hydrated[0]);
       })
       .catch(() => undefined);
-    fetch(`${endpoint}/alerts`).then((response) => response.ok ? response.json() : []).then((alerts: unknown[]) => setAlertCount(alerts.length)).catch(() => undefined);
-  }, [endpoint]);
+    fetch(`${endpoint}/alerts?user_id=${encodeURIComponent(userId)}`).then((response) => response.ok ? response.json() : []).then((alerts: unknown[]) => setAlertCount(alerts.length)).catch(() => undefined);
+  }, [endpoint, userId]);
   async function saveAddress() {
     setSaveError("");
     try {
-      const response = await fetch(`${endpoint}/saved-places`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ address, radius_meters: 800 }) });
+      const response = await fetch(`${endpoint}/saved-places`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ user_id: userId, address, radius_meters: 800 }) });
       if (!response.ok) throw new Error("Save failed");
-      const sync = await fetch(`${endpoint}/monitor/sync`, { method: "POST" });
+      const sync = await fetch(`${endpoint}/monitor/sync?user_id=${encodeURIComponent(userId)}`, { method: "POST" });
       const result = await sync.json() as { alerts_created: number };
       setAlertCount((count) => count + result.alerts_created);
       setSaved(true); setSaveOpen(false); setAddress("");
