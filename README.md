@@ -30,3 +30,13 @@ python3 -m pipeline.check
 The resolver groups agenda aliases by civic ID, address, and title similarity, retains the original document evidence, and turns each item into a lifecycle. It only permits an alert for a high-confidence address match at an approved, denied, or closed decision state.
 
 The checked-in documents are versioned development fixtures pointing to the CB6 public source. The production adapter should replace only `data/cb6_documents.json`; the resolver and API contract remain unchanged.
+
+## Ingest source files
+
+```bash
+python3 -m pip install -r pipeline/requirements.txt
+python3 -m pipeline.ingest --manifest data/cb6_sources.json
+python3 -m pipeline.build_snapshot --documents var/extracted/documents.json
+```
+
+The ingestion job caches raw files under `var/raw/`, writes extracted resolver-ready records under `var/extracted/`, hashes every input, and records blocked sources in `ingest-report.json`. Text PDFs are extracted directly; scanned PDFs render locally and pass through Tesseract. Audio accepts a `*.audio-extension.txt` transcript sidecar or a local `QUORUM_ASR_COMMAND` that prints the transcript to stdout. Keep raw CB6 PDFs/audio outside git and add their direct URLs or local paths to `data/cb6_sources.json`.

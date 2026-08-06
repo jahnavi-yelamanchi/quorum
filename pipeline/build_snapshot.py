@@ -5,6 +5,7 @@ Run: python3 -m pipeline.build_snapshot
 from __future__ import annotations
 
 import json
+import argparse
 from pathlib import Path
 
 from .monitor import lifecycle
@@ -15,7 +16,11 @@ RAW = ROOT / "data" / "cb6_documents.json"
 OUT = ROOT / "api" / "snapshot.json"
 
 def main() -> None:
-    raw = json.loads(RAW.read_text())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--documents", type=Path, default=RAW)
+    parser.add_argument("--output", type=Path, default=OUT)
+    args = parser.parse_args()
+    raw = json.loads(args.documents.read_text())
     documents = [Document(**document) for document in raw]
     records = []
     for item in resolve(documents):
@@ -32,8 +37,8 @@ def main() -> None:
             "source_url": item.evidence[-1].source_url,
             "lifecycle": [event.__dict__ for event in events],
         })
-    OUT.write_text(json.dumps(records, indent=2) + "\n")
-    print(f"Wrote {len(records)} evidence-backed items to {OUT.relative_to(ROOT)}")
+    args.output.write_text(json.dumps(records, indent=2) + "\n")
+    print(f"Wrote {len(records)} evidence-backed items to {args.output.relative_to(ROOT)}")
 
 if __name__ == "__main__":
     main()
