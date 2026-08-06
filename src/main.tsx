@@ -16,6 +16,8 @@ type Item = {
   confidence: number;
   bbl?: string | null;
   geo_confidence?: number;
+  longitude?: number | null;
+  latitude?: number | null;
   excerpt: string;
   source: string;
 };
@@ -42,16 +44,26 @@ const fallbackItems: Item[] = [
 const lifecycle = ["Scheduled", "Heard", "Deferred", "Decision"];
 const docs = ["Committee agenda", "Applicant materials", "Meeting minutes", "Public testimony"];
 
-type ApiItem = Pick<Item, "id" | "title" | "address" | "status" | "confidence" | "bbl" | "geo_confidence"> & { category: string; evidence: string; lifecycle?: { date: string }[] };
+type ApiItem = Pick<Item, "id" | "title" | "address" | "status" | "confidence" | "bbl" | "geo_confidence" | "longitude" | "latitude"> & { category: string; evidence: string; lifecycle?: { date: string }[] };
 
 function MapCanvas({ items, selected, onSelect }: { items: Item[]; selected: Item; onSelect: (item: Item) => void }) {
+  const located = items.filter((item): item is Item & { longitude: number; latitude: number } => item.longitude !== null && item.longitude !== undefined && item.latitude !== null && item.latitude !== undefined);
+  const longitude = located.map((item) => item.longitude);
+  const latitude = located.map((item) => item.latitude);
+  const bounds = { west: Math.min(...longitude), east: Math.max(...longitude), south: Math.min(...latitude), north: Math.max(...latitude) };
+  const position = (item: Item) => {
+    if (item.longitude === null || item.longitude === undefined || item.latitude === null || item.latitude === undefined || located.length < 2) return { left: `${item.x}%`, top: `${item.y}%` };
+    const width = bounds.east - bounds.west || 1;
+    const height = bounds.north - bounds.south || 1;
+    return { left: `${15 + 70 * (item.longitude - bounds.west) / width}%`, top: `${18 + 64 * (bounds.north - item.latitude) / height}%` };
+  };
   return <section className="map" aria-label="Community Board 6 decision map">
     <div className="map-controls"><button aria-label="Zoom in">+</button><button aria-label="Zoom out">−</button><button aria-label="Recenter map">◎</button></div>
     <div className="map-key"><span><i className="dot" /> Decision</span><span><i className="box" /> Parcel</span><span><i className="ring" /> Saved place</span></div>
     <div className="river east">EAST RIVER</div><div className="river west">EAST RIVER</div>
     <div className="district">MANHATTAN<br /><strong>COMMUNITY BOARD 6</strong></div>
     <div className="streets" />
-    {items.map((item, index) => <button key={item.id} className={`pin ${selected.id === item.id ? "active" : ""}`} style={{ left: `${item.x}%`, top: `${item.y}%` }} onClick={() => onSelect(item)} aria-label={`Show ${item.title}`}><span>{index + 1}</span></button>)}
+    {items.map((item, index) => <button key={item.id} className={`pin ${selected.id === item.id ? "active" : ""}`} style={position(item)} onClick={() => onSelect(item)} aria-label={`Show ${item.title}`}><span>{index + 1}</span></button>)}
     <div className="saved-pin" style={{ left: "54%", top: "57%" }} title="Saved place" />
     <div className="scale">0 <b /> 500 <b /> 1000 ft</div>
   </section>;
@@ -111,7 +123,7 @@ function App() {
   return <main>
     <header><a className="logo" href="#top">QUORUM</a><span className="strap">Civic decision intelligence</span><nav><a className="selected" href="#map">Map</a><a href="#alerts">Alerts {alertCount > 0 && <sup>{alertCount}</sup>}</a><button onClick={() => setShowMethod(!showMethod)}>Methodology</button></nav><button className="cta" onClick={() => setSaveOpen(true)}>{saved ? "ADDRESS SAVED" : "SAVE AN ADDRESS"}</button></header>
     {saveOpen && <div className="modal-backdrop" role="presentation"><form className="save-modal" onSubmit={(event) => { event.preventDefault(); void saveAddress(); }}><button className="close" type="button" onClick={() => setSaveOpen(false)} aria-label="Close">×</button><h2>WATCH THIS PLACE</h2><p>We alert only when a high-confidence civic item reaches a decision state.</p><label htmlFor="address">Street address</label><input id="address" value={address} onChange={(event) => setAddress(event.target.value)} placeholder="90 Park Avenue" minLength={5} required autoFocus />{saveError && <small className="error">{saveError}</small>}<button className="cta" type="submit">SAVE + MONITOR</button></form></div>}
-    {showMethod && <div className="method" role="status">Every connection shown here carries a document excerpt, civic identifier, and confidence score. Alerts require a high-confidence place match and a decision-stage change.</div>}
+    {showMethod && <section className="method" role="status"><strong>MODEL STATUS: SILVER BASELINE</strong><span>The entity linker learns from recurring official DOB job IDs, not human-adjudicated labels. Its score ranks review candidates only; alerts remain evidence- and rule-gated.</span></section>}
     <section className="hero" id="top"><h1>WHAT’S DECIDING</h1><p>NEAR YOUR<br />ADDRESS</p></section>
     <section className="workspace" id="map"><Detail item={selected} /><MapCanvas items={items} selected={selected} onSelect={setSelected} /><aside className="manifesto"><h2>DECISIONS HAPPEN NEAR YOU.</h2><p>Every marker is a public item entering a decision point in Community Board 6.</p><div><b>01 / Linked</b><p>Case IDs, named projects, and addresses are resolved into one civic record.</p></div><div><b>02 / Explained</b><p>Open the evidence trail before you decide whether it matters.</p></div><div><b>03 / Watched</b><p>Saved places receive a signal only when an item actually changes state.</p></div><button className="outline" onClick={() => setSaveOpen(true)}>Watch this place →</button></aside></section>
     <section className="evidence" id="alerts"><div className="rail-intro"><h2>Evidence rail</h2><p>Documents and records that support every decision.</p><a href="#map">Back to map →</a></div>{docs.map((doc, index) => <button className="doc" key={doc} onClick={() => setSelected(items[index % items.length])}><span>▱</span><b>{doc}</b><strong>{index === 0 ? selected.source : `${selected.title} · record ${index + 1}`}</strong><small>{selected.date} · PDF</small></button>)}<button className="all-docs">See all<br />documents →</button></section>
