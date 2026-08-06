@@ -8,6 +8,8 @@ from typing import Literal
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from monitor import sync
+from storage import connection
 
 app = FastAPI(title="Quorum API", version="0.1.0")
 app.add_middleware(
@@ -35,8 +37,11 @@ class Item(BaseModel):
     organizations: list[str] = []
 
 class Interest(BaseModel):
+    user_id: str = "demo"
     address: str = Field(min_length=5, max_length=200)
     radius_meters: int = Field(default=800, ge=100, le=5000)
+    latitude: float | None = None
+    longitude: float | None = None
 
 SNAPSHOT = Path(__file__).with_name("snapshot.json")
 
@@ -79,6 +84,27 @@ def get_review_queue() -> list[dict[str, str | int]]:
     ]
 
 @app.post("/saved-places")
-def save_place(interest: Interest) -> dict[str, str | int]:
-    # ponytail: demo persistence is intentionally client-side; add Postgres only for multi-user accounts.
-    return {"address": interest.address, "radius_meters": interest.radius_meters, "status": "saved"}
+def save_place(interest: Interest) -> dict[str, str | int | float | None]:
+    database = connection()
+    cursor = database.execute("INSERT INTO saved_places (user_id, address, latitude, longitude, radius_meters) VALUES (?, ?, ?, ?, ?)", (interest.user_id, interest.address, interest.latitude, interest.longitude, interest.radius_meters))
+    database.commit()
+    return {"id": cursor.lastrowid, **interest.model_dump(), "status": "saved"}
+
+@app.get("/saved-places")
+def saved_places(user_id: str = "demo") -> list[dict]:
+    database = connection()
+    return [dict(row) for row in database.execute("SELECT * FROM saved_places WHERE user_id = ? ORDER BY id DESC", (user_id,))]
+
+@app.post("/monitor/sync")
+def sync_monitor(user_id: str = "demo") -> dict[str, int]:
+    database = connection()
+    places = database.execute("SELECT * FROM saved_places WHERE user_id = ?", (user_id,)).fetchall()
+    return {"alerts_created": sync(database, places, [item.model_dump() for item in items()])}
+
+@app.get("/alerts")
+def alerts(user_id: str = "demo") -> list[dict]:
+    database = connection()
+    query = """SELECT alerts.id, alerts.item_id, alerts.status, alerts.created_at, saved_places.address
+      FROM alerts JOIN saved_places ON saved_places.id = alerts.place_id
+      WHERE saved_places.user_id = ? ORDER BY alerts.id DESC"""
+    return [dict(row) for row in database.execute(query, (user_id,))]

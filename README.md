@@ -48,6 +48,10 @@ This refreshes Manhattan Community Board 6 DOB job filings directly from NYC Ope
 
 After this branch is merged, GitHub Actions refreshes the source every Monday at 12:17 UTC and commits `api/snapshot.json` only when it changes. It can also be run manually from the Actions tab.
 
+## Personal monitor
+
+`POST /saved-places` persists an address (and optional coordinates) in SQLite. Run `POST /monitor/sync` after a snapshot refresh to store one alert per saved place, civic item, and decision state. Exact address matching is always allowed; nearby matching requires coordinates and the user's supplied radius. `GET /alerts` exposes the evidence-backed alert inbox.
+
 ## Ingest source files
 
 ```bash

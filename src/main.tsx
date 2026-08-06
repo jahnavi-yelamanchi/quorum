@@ -74,9 +74,13 @@ function App() {
   const [items, setItems] = useState(fallbackItems);
   const [selected, setSelected] = useState(fallbackItems[0]);
   const [saved, setSaved] = useState(false);
+  const [saveOpen, setSaveOpen] = useState(false);
+  const [address, setAddress] = useState("");
+  const [saveError, setSaveError] = useState("");
+  const [alertCount, setAlertCount] = useState(0);
   const [showMethod, setShowMethod] = useState(false);
+  const endpoint = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
   useEffect(() => {
-    const endpoint = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
     fetch(`${endpoint}/items`)
       .then((response) => response.ok ? response.json() : Promise.reject(response.statusText))
       .then((records: ApiItem[]) => {
@@ -89,12 +93,27 @@ function App() {
         setSelected(hydrated[0]);
       })
       .catch(() => undefined);
-  }, []);
+    fetch(`${endpoint}/alerts`).then((response) => response.ok ? response.json() : []).then((alerts: unknown[]) => setAlertCount(alerts.length)).catch(() => undefined);
+  }, [endpoint]);
+  async function saveAddress() {
+    setSaveError("");
+    try {
+      const response = await fetch(`${endpoint}/saved-places`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ address, radius_meters: 800 }) });
+      if (!response.ok) throw new Error("Save failed");
+      const sync = await fetch(`${endpoint}/monitor/sync`, { method: "POST" });
+      const result = await sync.json() as { alerts_created: number };
+      setAlertCount((count) => count + result.alerts_created);
+      setSaved(true); setSaveOpen(false); setAddress("");
+    } catch {
+      setSaveError("The monitor is unavailable. Start the API and try again.");
+    }
+  }
   return <main>
-    <header><a className="logo" href="#top">QUORUM</a><span className="strap">Civic decision intelligence</span><nav><a className="selected" href="#map">Map</a><a href="#alerts">Alerts <sup>1</sup></a><button onClick={() => setShowMethod(!showMethod)}>Methodology</button></nav><button className="cta" onClick={() => setSaved(true)}>{saved ? "ADDRESS SAVED" : "SAVE AN ADDRESS"}</button></header>
+    <header><a className="logo" href="#top">QUORUM</a><span className="strap">Civic decision intelligence</span><nav><a className="selected" href="#map">Map</a><a href="#alerts">Alerts {alertCount > 0 && <sup>{alertCount}</sup>}</a><button onClick={() => setShowMethod(!showMethod)}>Methodology</button></nav><button className="cta" onClick={() => setSaveOpen(true)}>{saved ? "ADDRESS SAVED" : "SAVE AN ADDRESS"}</button></header>
+    {saveOpen && <div className="modal-backdrop" role="presentation"><form className="save-modal" onSubmit={(event) => { event.preventDefault(); void saveAddress(); }}><button className="close" type="button" onClick={() => setSaveOpen(false)} aria-label="Close">×</button><h2>WATCH THIS PLACE</h2><p>We alert only when a high-confidence civic item reaches a decision state.</p><label htmlFor="address">Street address</label><input id="address" value={address} onChange={(event) => setAddress(event.target.value)} placeholder="90 Park Avenue" minLength={5} required autoFocus />{saveError && <small className="error">{saveError}</small>}<button className="cta" type="submit">SAVE + MONITOR</button></form></div>}
     {showMethod && <div className="method" role="status">Every connection shown here carries a document excerpt, civic identifier, and confidence score. Alerts require a high-confidence place match and a decision-stage change.</div>}
     <section className="hero" id="top"><h1>WHAT’S DECIDING</h1><p>NEAR YOUR<br />ADDRESS</p></section>
-    <section className="workspace" id="map"><Detail item={selected} /><MapCanvas items={items} selected={selected} onSelect={setSelected} /><aside className="manifesto"><h2>DECISIONS HAPPEN NEAR YOU.</h2><p>Every marker is a public item entering a decision point in Community Board 6.</p><div><b>01 / Linked</b><p>Case IDs, named projects, and addresses are resolved into one civic record.</p></div><div><b>02 / Explained</b><p>Open the evidence trail before you decide whether it matters.</p></div><div><b>03 / Watched</b><p>Saved places receive a signal only when an item actually changes state.</p></div><button className="outline" onClick={() => setSaved(true)}>Watch this place →</button></aside></section>
+    <section className="workspace" id="map"><Detail item={selected} /><MapCanvas items={items} selected={selected} onSelect={setSelected} /><aside className="manifesto"><h2>DECISIONS HAPPEN NEAR YOU.</h2><p>Every marker is a public item entering a decision point in Community Board 6.</p><div><b>01 / Linked</b><p>Case IDs, named projects, and addresses are resolved into one civic record.</p></div><div><b>02 / Explained</b><p>Open the evidence trail before you decide whether it matters.</p></div><div><b>03 / Watched</b><p>Saved places receive a signal only when an item actually changes state.</p></div><button className="outline" onClick={() => setSaveOpen(true)}>Watch this place →</button></aside></section>
     <section className="evidence" id="alerts"><div className="rail-intro"><h2>Evidence rail</h2><p>Documents and records that support every decision.</p><a href="#map">Back to map →</a></div>{docs.map((doc, index) => <button className="doc" key={doc} onClick={() => setSelected(items[index % items.length])}><span>▱</span><b>{doc}</b><strong>{index === 0 ? selected.source : `${selected.title} · record ${index + 1}`}</strong><small>{selected.date} · PDF</small></button>)}<button className="all-docs">See all<br />documents →</button></section>
     <footer>QUORUM / MANHATTAN CB6 / CURATED DEMO SNAPSHOT · All records are public-source civic data.</footer>
   </main>;
