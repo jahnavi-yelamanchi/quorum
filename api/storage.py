@@ -5,7 +5,7 @@ import os
 import sqlite3
 from pathlib import Path
 
-DATABASE = Path(os.getenv("QUORUM_DB", Path(__file__).resolve().parents[1] / "var" / "quorum.sqlite"))
+DATABASE = Path(os.getenv("QUORUM_DB", "/tmp/quorum.sqlite" if os.getenv("VERCEL") else Path(__file__).resolve().parents[1] / "var" / "quorum.sqlite"))
 
 def connection() -> sqlite3.Connection:
     DATABASE.parent.mkdir(parents=True, exist_ok=True)
