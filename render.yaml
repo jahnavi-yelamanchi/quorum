@@ -3,12 +3,6 @@ services:
     name: quorum-api
     runtime: docker
     healthCheckPath: /health
-    disk:
-      name: quorum-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
-      - key: QUORUM_DB
-        value: /var/data/quorum.sqlite
       - key: QUORUM_CORS_ORIGINS
         sync: false

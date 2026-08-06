@@ -54,7 +54,7 @@ After this branch is merged, GitHub Actions refreshes the source every Monday at
 
 ## Deploy
 
-Deploy the API from this repository with the included `render.yaml`; it mounts a persistent disk for SQLite. Set `QUORUM_CORS_ORIGINS` to the deployed frontend URL. Deploy the Vite app to Vercel with `VITE_API_URL` set to the API URL. The scheduled source-refresh workflow starts after the branch is merged into the default branch.
+Deploy the API from this repository with the included `render.yaml`. Its free-demo setup uses ephemeral SQLite storage, so saved addresses and alerts reset if Render restarts. Set `QUORUM_CORS_ORIGINS` to the deployed frontend URL. Deploy the Vite app to Vercel with `VITE_API_URL` set to the API URL. The scheduled source-refresh workflow starts after the branch is merged into the default branch.
 
 ## Ingest source files
 
