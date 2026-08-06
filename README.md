@@ -46,6 +46,8 @@ python3 -m pipeline.build_snapshot --documents var/extracted/dob-cb6-documents.j
 
 This refreshes Manhattan Community Board 6 DOB job filings directly from NYC Open Data: address, BBL, coordinates, applicant/owner, status, and description arrive without manual downloading. PDF/OCR/ASR ingestion remains available for agenda evidence later.
 
+After this branch is merged, GitHub Actions refreshes the source every Monday at 12:17 UTC and commits `api/snapshot.json` only when it changes. It can also be run manually from the Actions tab.
+
 ## Ingest source files
 
 ```bash

@@ -1,0 +1,35 @@
+name: Refresh CB6 development feed
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Number of recent DOB rows to fetch
+        required: false
+        default: "20"
+  schedule:
+    - cron: "17 12 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch and resolve public CB6 filings
+        run: |
+          python -m pipeline.socrata --limit "${{ inputs.limit || '20' }}"
+          python -m pipeline.build_snapshot --documents var/extracted/dob-cb6-documents.json
+          python -m pipeline.review
+      - name: Commit updated snapshot when it changed
+        run: |
+          git config user.name "quorum-bot"
+          git config user.email "quorum-bot@users.noreply.github.com"
+          git add api/snapshot.json
+          git diff --cached --quiet || git commit -m "chore: refresh CB6 development feed"
+          git push
