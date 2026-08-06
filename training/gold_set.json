@@ -1,0 +1,12 @@
+{
+  "entities": [
+    {"document_id": "cb6-business-affairs-2026-06", "item_id": "cb6-2026-17", "address": "213 East 27th Street", "state": "scheduled"},
+    {"document_id": "cb6-business-affairs-2026-07", "item_id": "cb6-2026-17", "address": "213 East 27th Street", "state": "heard"},
+    {"document_id": "cb6-business-affairs-2026-08", "item_id": "cb6-2026-17", "address": "213 East 27th Street", "state": "deferred"},
+    {"document_id": "cb6-land-use-2026-09", "item_id": "350-madison-avenue", "address": "350 Madison Avenue", "state": "heard"}
+  ],
+  "alert_cases": [
+    {"item_id": "cb6-2026-17", "saved_address": "213 East 27th Street", "expected": false},
+    {"item_id": "350-madison-avenue", "saved_address": "350 Madison Avenue", "expected": false}
+  ]
+}
