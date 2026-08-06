@@ -16,6 +16,10 @@ class LifecycleEvent:
 
 def state_for(text: str) -> str:
     lowered = text.lower()
+    if "signed off" in lowered:
+        return "closed"
+    if "plan exam - approved" in lowered or "fully permitted" in lowered:
+        return "approved"
     for state in ("denied", "approved", "deferred", "continued", "closed", "heard", "scheduled"):
         if state in lowered:
             return state

@@ -29,11 +29,12 @@ def main() -> None:
     for item in resolve(documents):
         events = lifecycle(item)
         latest = events[-1]
+        source_document = next((document for document in reversed(item.evidence) if document.bbl and document.longitude is not None and document.latitude is not None), None)
         geo = resolve_parcel(item.address or "", parcels)
         records.append({
             "id": item.id,
             "title": item.title,
-            "category": "licensing" if "license" in item.title.lower() else "land_use",
+            "category": "licensing" if "license" in item.title.lower() else "development" if "dob filing" in item.title.lower() else "land_use",
             "address": item.address or "Address unresolved",
             "status": latest.state,
             "confidence": item.confidence,
@@ -43,10 +44,10 @@ def main() -> None:
             "aliases": sorted(item.aliases),
             "case_numbers": sorted(item.case_numbers),
             "organizations": sorted(item.organizations),
-            "bbl": geo.parcel.bbl if geo.parcel else None,
-            "longitude": geo.parcel.longitude if geo.parcel else None,
-            "latitude": geo.parcel.latitude if geo.parcel else None,
-            "geo_confidence": geo.confidence,
+            "bbl": source_document.bbl if source_document else geo.parcel.bbl if geo.parcel else None,
+            "longitude": source_document.longitude if source_document else geo.parcel.longitude if geo.parcel else None,
+            "latitude": source_document.latitude if source_document else geo.parcel.latitude if geo.parcel else None,
+            "geo_confidence": 99 if source_document else geo.confidence,
         })
     args.output.write_text(json.dumps(records, indent=2) + "\n")
     print(f"Wrote {len(records)} evidence-backed items to {args.output.relative_to(ROOT)}")

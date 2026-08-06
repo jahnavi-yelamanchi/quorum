@@ -7,7 +7,7 @@ items = client.get("/items")
 assert items.status_code == 200
 assert all(item["confidence"] >= 90 and item["evidence"] for item in items.json())
 
-relationships = client.get("/items/cb6-2026-17/relationships")
+relationships = client.get(f"/items/{items.json()[0]['id']}/relationships")
 assert relationships.status_code == 200
 assert any(node["kind"] == "organization" for node in relationships.json()["nodes"])
 

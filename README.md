@@ -37,6 +37,15 @@ Export the relevant MapPLUTO parcels as GeoJSON, or provide a CSV with `BBL`, `A
 
 Run `python3 -m pipeline.review` to export unresolved entity/parcel links into the operator review queue. The API exposes the same list at `GET /review-queue`; it is intentionally not part of the public alert flow.
 
+## Automated CB6 development feed
+
+```bash
+python3 -m pipeline.socrata --limit 20
+python3 -m pipeline.build_snapshot --documents var/extracted/dob-cb6-documents.json
+```
+
+This refreshes Manhattan Community Board 6 DOB job filings directly from NYC Open Data: address, BBL, coordinates, applicant/owner, status, and description arrive without manual downloading. PDF/OCR/ASR ingestion remains available for agenda evidence later.
+
 ## Ingest source files
 
 ```bash

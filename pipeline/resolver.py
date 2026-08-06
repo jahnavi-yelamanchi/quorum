@@ -5,7 +5,7 @@ import re
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 
-CASE_NUMBER = re.compile(r"\b(?:ULURP\s+[A-Z]?\s*\d{4,}\s*[A-Z]{0,4}|BSA\s+(?:Cal\.\s*)?No\.\s*\d{4}-\d{2}-[A-Z]{2}|CB6-\d{4}-\d+)\b", re.I)
+CASE_NUMBER = re.compile(r"\b(?:ULURP\s+[A-Z]?\s*\d{4,}\s*[A-Z]{0,4}|BSA\s+(?:Cal\.\s*)?No\.\s*\d{4}-\d{2}-[A-Z]{2}|CB6-\d{4}-\d+|DOB\s+Job\s+\d+)\b", re.I)
 ADDRESS = re.compile(r"\b\d{1,5}\s+(?:(?:East|West)\s+)?(?:\d{1,3}(?:st|nd|rd|th)?|[A-Z][a-z]+)\s+(?:Street|St|Avenue|Ave|Road|Rd|Place|Pl|Boulevard|Blvd)\b", re.I)
 ORGANIZATION = re.compile(r"\b(?:Applicant|Sponsor|Organization):\s*([^\n]+)", re.I)
 
@@ -15,6 +15,9 @@ class Document:
     meeting_date: str
     source_url: str
     text: str
+    bbl: str | None = None
+    longitude: float | None = None
+    latitude: float | None = None
 
 @dataclass
 class ResolvedItem:

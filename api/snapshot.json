@@ -1,78 +1,182 @@
 [
   {
-    "id": "cb6-2026-17",
-    "title": "New liquor license: East 27th Street",
-    "category": "licensing",
-    "address": "213 East 27th Street",
-    "status": "deferred",
+    "id": "dob-job-121788958",
+    "title": "DOB filing 121788958",
+    "category": "development",
+    "address": "90 PARK AVENUE",
+    "status": "closed",
     "confidence": 99,
-    "evidence": "CB6-2026-17 deferred pending an amended operations plan.",
-    "source_url": "https://www.nyc.gov/site/manhattancb6/index.page",
+    "evidence": "STRUCTURAL MODIFICATIONS TAKING PLACE BETWEEN THE 26TH &amp; 28TH (CONSTRUCTION / 27TH &amp; 29TH MARKETING) FLOORS AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS NOR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123852875%27",
     "lifecycle": [
       {
-        "item_id": "cb6-2026-17",
-        "date": "2026-06-18",
-        "state": "scheduled",
-        "excerpt": "CB6-2026-17 scheduled for committee review."
+        "item_id": "dob-job-121788958",
+        "date": "2014-07-02",
+        "state": "closed",
+        "excerpt": "MECHANICAL AND PLUMBING CHANGES TO CORE TOILETS ON THE 27TH FLOOR (VORNADO) AS INDICATED ON DRAWINGS.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
       },
       {
-        "item_id": "cb6-2026-17",
-        "date": "2026-07-16",
-        "state": "heard",
-        "excerpt": "CB6-2026-17 heard by the Business Affairs Committee."
+        "item_id": "dob-job-121788958",
+        "date": "2014-07-31",
+        "state": "closed",
+        "excerpt": "INSTALLATION OF MANUAL ALARM, AUTOMATIC SMOKE DETECTION AND SPRINKLER FIRE ALARM SYSTEM AND COC. POST FIRE SMOKE PURGE."
       },
       {
-        "item_id": "cb6-2026-17",
-        "date": "2026-08-20",
-        "state": "deferred",
-        "excerpt": "CB6-2026-17 deferred pending an amended operations plan."
+        "item_id": "dob-job-121788958",
+        "date": "2015-12-01",
+        "state": "closed",
+        "excerpt": "INSTALL NEW SPRINKLER HEADS AND RELATED PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY. IN CONJUNCTION WITH ALT #1213 33958"
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2017-05-17",
+        "state": "closed",
+        "excerpt": "FILING FOR STRUCTURAL FRAMING FOR TENANT RENOVATION AS SHOWN ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2017-05-17",
+        "state": "closed",
+        "excerpt": "INSTALLATION OF MECHANICAL EQUIPMENT AND RELATED DUCTWORK FOR TENANT RENOVATION. INSTALLATION OF PLUMBING FIXTURES AND RELATED PIPING FOR TENANT RENOVATION AS SHOWN ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2018-03-30",
+        "state": "closed",
+        "excerpt": "INSTALLATION OF TEMPORARY AIR PRESSURIZED ALARM SYSTEM FOR DRY STANDPIPE SYSTEM DURING CONSTRUCTION FILED IN CONJUCTION WITH NB#121328321"
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2020-06-19",
+        "state": "closed",
+        "excerpt": "FILING HEREWITH MECHANICAL AND PLUMBING WORK AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2020-10-07",
+        "state": "closed",
+        "excerpt": "MECHANICAL WORK FILING IN CONJUNCTION APARTMENT RENVOATION. NO CHANGE TO USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2021-05-20",
+        "state": "closed",
+        "excerpt": "MECHANICAL AND PLUMBING MODIFICATIONS TAKING PLACE BETWEEN THE 26TH &amp; 28TH (CONSTRUCTION / 27TH &amp; 29TH MARKETING) FLOORS AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS NOR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121788958",
+        "date": "2021-05-20",
+        "state": "closed",
+        "excerpt": "STRUCTURAL MODIFICATIONS TAKING PLACE BETWEEN THE 26TH &amp; 28TH (CONSTRUCTION / 27TH &amp; 29TH MARKETING) FLOORS AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS NOR OCCUPANCY."
       }
     ],
     "aliases": [
-      "27th street liquor license application",
-      "east 27th street on premises liquor license",
-      "new liquor license east 27th street"
+      "dob filing 121235859",
+      "dob filing 121788958",
+      "dob filing 121821038",
+      "dob filing 121945672",
+      "dob filing 121995948",
+      "dob filing 123782745",
+      "dob filing 123783254",
+      "dob filing 123852875"
     ],
     "case_numbers": [
-      "cb6 2026 17"
+      "dob job 121235859",
+      "dob job 121788958",
+      "dob job 121821038",
+      "dob job 121945672",
+      "dob job 121995948",
+      "dob job 123782745",
+      "dob job 123783254",
+      "dob job 123852875"
     ],
     "organizations": [
-      "east 27 hospitality llc"
+      "605 third avenue fee llc",
+      "are east river science park llc",
+      "bruce lilker",
+      "charles copeland",
+      "david kurten",
+      "david lau",
+      "james perise",
+      "joseph krzyzewski jr",
+      "michael desrochers",
+      "mission of rep of namibia",
+      "river house realty co inc",
+      "snowplow llc",
+      "sol schwartz",
+      "st owner lp",
+      "tiaa cref",
+      "tinchi lee",
+      "vornado office management",
+      "yue zhou"
     ],
-    "bbl": "1009080050",
-    "longitude": -73.98172000000001,
-    "latitude": 40.74148,
+    "bbl": "1009200012",
+    "longitude": -73.975761,
+    "latitude": 40.748972,
     "geo_confidence": 99
   },
   {
-    "id": "ulurp-c-260247-zmm",
-    "title": "East Midtown Special District",
-    "category": "land_use",
-    "address": "350 Madison Avenue",
-    "status": "heard",
+    "id": "dob-job-121946733",
+    "title": "DOB filing 121946733",
+    "category": "development",
+    "address": "780 THIRD AVENUE",
+    "status": "closed",
     "confidence": 99,
-    "evidence": "ULURP C 260247 ZMM heard by the Land Use Committee.",
-    "source_url": "https://www.nyc.gov/site/manhattancb6/index.page",
+    "evidence": "FILING HEREWITH MECHANICAL AND PLUMBING WORK AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121946733%27",
     "lifecycle": [
       {
-        "item_id": "ulurp-c-260247-zmm",
-        "date": "2026-09-12",
-        "state": "heard",
-        "excerpt": "ULURP C 260247 ZMM heard by the Land Use Committee."
+        "item_id": "dob-job-121946733",
+        "date": "2016-04-25",
+        "state": "closed",
+        "excerpt": "FILING HEREWITH MECHANICAL AND PLUMBING WORK AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
       }
     ],
     "aliases": [
-      "east midtown special district"
+      "dob filing 121946733"
     ],
     "case_numbers": [
-      "ulurp c 260247 zmm"
+      "dob job 121946733"
     ],
     "organizations": [
-      "midtown planning group"
+      "michael gerazounis",
+      "tiaa cref"
     ],
-    "bbl": "1008620001",
-    "longitude": -73.97952000000001,
-    "latitude": 40.75228,
+    "bbl": "1013030033",
+    "longitude": -73.971619,
+    "latitude": 40.754669,
+    "geo_confidence": 99
+  },
+  {
+    "id": "dob-job-123837722",
+    "title": "DOB filing 123837722",
+    "category": "development",
+    "address": "777 3RD AVENUE",
+    "status": "closed",
+    "confidence": 99,
+    "evidence": "MODIFY DUCTWORK AS SHOWN ON DRAWINGS FILED HEREWITH.  NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123837722%27",
+    "lifecycle": [
+      {
+        "item_id": "dob-job-123837722",
+        "date": "2020-01-10",
+        "state": "closed",
+        "excerpt": "MODIFY DUCTWORK AS SHOWN ON DRAWINGS FILED HEREWITH.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      }
+    ],
+    "aliases": [
+      "dob filing 123837722"
+    ],
+    "case_numbers": [
+      "dob job 123837722"
+    ],
+    "organizations": [
+      "arthur metzler",
+      "sage realty corporation"
+    ],
+    "bbl": "1013220001",
+    "longitude": -73.971598,
+    "latitude": 40.75466,
     "geo_confidence": 99
   }
 ]
