@@ -3,6 +3,7 @@
 Run with: uvicorn main:app --reload --app-dir api
 """
 import json
+import os
 from pathlib import Path
 from typing import Literal
 from fastapi import FastAPI, HTTPException
@@ -14,7 +15,7 @@ from storage import connection
 app = FastAPI(title="Quorum API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=os.getenv("QUORUM_CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(","),
     allow_methods=["*"],
     allow_headers=["*"],
 )

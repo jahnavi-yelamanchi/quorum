@@ -52,6 +52,10 @@ After this branch is merged, GitHub Actions refreshes the source every Monday at
 
 `POST /saved-places` persists an address (and optional coordinates) in SQLite. Run `POST /monitor/sync` after a snapshot refresh to store one alert per saved place, civic item, and decision state. Exact address matching is always allowed; nearby matching requires coordinates and the user's supplied radius. `GET /alerts` exposes the evidence-backed alert inbox.
 
+## Deploy
+
+Deploy the API from this repository with the included `render.yaml`; it mounts a persistent disk for SQLite. Set `QUORUM_CORS_ORIGINS` to the deployed frontend URL. Deploy the Vite app to Vercel with `VITE_API_URL` set to the API URL. The scheduled source-refresh workflow starts after the branch is merged into the default branch.
+
 ## Ingest source files
 
 ```bash
