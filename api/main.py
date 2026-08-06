@@ -30,6 +30,9 @@ class Item(BaseModel):
     longitude: float | None = None
     latitude: float | None = None
     geo_confidence: int = 0
+    aliases: list[str] = []
+    case_numbers: list[str] = []
+    organizations: list[str] = []
 
 class Interest(BaseModel):
     address: str = Field(min_length=5, max_length=200)
@@ -54,6 +57,18 @@ def get_item(item_id: str) -> Item:
     if not item:
         raise HTTPException(404, "Unknown civic item")
     return item
+
+@app.get("/items/{item_id}/relationships")
+def item_relationships(item_id: str) -> dict[str, list[dict[str, str]]]:
+    item = get_item(item_id)
+    nodes = [{"id": item.id, "kind": "item", "label": item.title}]
+    edges = []
+    for kind, values in (("alias", item.aliases), ("case", item.case_numbers), ("organization", item.organizations), ("parcel", [item.bbl] if item.bbl else [])):
+        for value in values:
+            node_id = f"{kind}:{value}"
+            nodes.append({"id": node_id, "kind": kind, "label": value})
+            edges.append({"from": item.id, "to": node_id, "kind": kind})
+    return {"nodes": nodes, "edges": edges}
 
 @app.post("/saved-places")
 def save_place(interest: Interest) -> dict[str, str | int]:

@@ -28,27 +28,47 @@
         "excerpt": "CB6-2026-17 deferred pending an amended operations plan."
       }
     ],
+    "aliases": [
+      "27th street liquor license application",
+      "east 27th street on premises liquor license",
+      "new liquor license east 27th street"
+    ],
+    "case_numbers": [
+      "cb6 2026 17"
+    ],
+    "organizations": [
+      "east 27 hospitality llc"
+    ],
     "bbl": "1009080050",
     "longitude": -73.98172000000001,
     "latitude": 40.74148,
     "geo_confidence": 99
   },
   {
-    "id": "350-madison-avenue",
+    "id": "ulurp-c-260247-zmm",
     "title": "East Midtown Special District",
     "category": "land_use",
     "address": "350 Madison Avenue",
     "status": "heard",
-    "confidence": 93,
+    "confidence": 99,
     "evidence": "ULURP C 260247 ZMM heard by the Land Use Committee.",
     "source_url": "https://www.nyc.gov/site/manhattancb6/index.page",
     "lifecycle": [
       {
-        "item_id": "350-madison-avenue",
+        "item_id": "ulurp-c-260247-zmm",
         "date": "2026-09-12",
         "state": "heard",
         "excerpt": "ULURP C 260247 ZMM heard by the Land Use Committee."
       }
+    ],
+    "aliases": [
+      "east midtown special district"
+    ],
+    "case_numbers": [
+      "ulurp c 260247 zmm"
+    ],
+    "organizations": [
+      "midtown planning group"
     ],
     "bbl": "1008620001",
     "longitude": -73.97952000000001,
