@@ -11,4 +11,10 @@ assert items[0].confidence == 99
 assert items[0].organizations == {"northstar llc"}
 assert [event.state for event in lifecycle(items[0])] == ["scheduled", "approved"]
 assert should_alert(items[0], lifecycle(items[0]), "213 East 27th Street")
+
+distinct = resolve([
+    Document("3", "2026-08-01", "https://example.test/c", "DOB filing 100001\n90 Park Avenue\nDOB Job 100001 closed"),
+    Document("4", "2026-08-01", "https://example.test/d", "DOB filing 100002\n780 Third Avenue\nDOB Job 100002 closed"),
+])
+assert len(distinct) == 2
 print("Resolver and lifecycle checks passed")

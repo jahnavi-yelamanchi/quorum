@@ -57,7 +57,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     docs = documents(fetch(args.limit))
     args.output.write_text(json.dumps(docs, indent=2) + "\n")
-    print(f"Wrote {len(docs)} automated CB6 DOB documents to {args.output.relative_to(ROOT)}")
+    print(f"Wrote {len(docs)} automated CB6 DOB documents to {args.output}")
 
 if __name__ == "__main__":
     main()

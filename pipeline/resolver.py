@@ -51,6 +51,8 @@ def _same_item(item: ResolvedItem, title: str, address: str | None, case: str | 
         return True
     if address and item.address and _normalize(address) == _normalize(item.address):
         return True
+    if case or address:
+        return False
     return max((SequenceMatcher(None, _normalize(title), alias).ratio() for alias in item.aliases), default=0) >= 0.78
 
 def resolve(documents: list[Document]) -> list[ResolvedItem]:
