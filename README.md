@@ -18,6 +18,7 @@ python3 -m venv .venv
 ```
 
 The UI is self-contained so it can be previewed without the API. The API exposes evidence-backed demo items at `GET /items` and validates saved-place input at `POST /saved-places`.
+Set `VITE_API_URL` to the deployed API URL to hydrate the map from the snapshot; without it, the presentation fallback remains usable.
 
 ## Build the civic snapshot
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
@@ -9,7 +9,7 @@ type Item = {
   address: string;
   neighborhood: string;
   distance: string;
-  status: "scheduled" | "heard" | "deferred" | "approved";
+  status: "scheduled" | "heard" | "deferred" | "continued" | "approved" | "denied" | "closed";
   date: string;
   x: number;
   y: number;
@@ -18,7 +18,7 @@ type Item = {
   source: string;
 };
 
-const items: Item[] = [
+const fallbackItems: Item[] = [
   {
     id: "east-midtown", title: "East Midtown Special District", kind: "Land use", address: "350 Madison Avenue", neighborhood: "Midtown East", distance: "0.4 mi from your saved place", status: "heard", date: "September 12, 2026", x: 57, y: 26, confidence: 96,
     excerpt: "The application seeks a modification to facilitate commercial redevelopment within the East Midtown Subdistrict.", source: "CB6 Land Use Committee agenda"
@@ -40,7 +40,9 @@ const items: Item[] = [
 const lifecycle = ["Scheduled", "Heard", "Deferred", "Decision"];
 const docs = ["Committee agenda", "Applicant materials", "Meeting minutes", "Public testimony"];
 
-function MapCanvas({ selected, onSelect }: { selected: Item; onSelect: (item: Item) => void }) {
+type ApiItem = Pick<Item, "id" | "title" | "address" | "status" | "confidence"> & { category: string; evidence: string; lifecycle?: { date: string }[] };
+
+function MapCanvas({ items, selected, onSelect }: { items: Item[]; selected: Item; onSelect: (item: Item) => void }) {
   return <section className="map" aria-label="Community Board 6 decision map">
     <div className="map-controls"><button aria-label="Zoom in">+</button><button aria-label="Zoom out">−</button><button aria-label="Recenter map">◎</button></div>
     <div className="map-key"><span><i className="dot" /> Decision</span><span><i className="box" /> Parcel</span><span><i className="ring" /> Saved place</span></div>
@@ -54,7 +56,7 @@ function MapCanvas({ selected, onSelect }: { selected: Item; onSelect: (item: It
 }
 
 function Detail({ item }: { item: Item }) {
-  const stage = item.status === "scheduled" ? 0 : item.status === "heard" ? 1 : item.status === "deferred" ? 2 : 3;
+  const stage = item.status === "scheduled" ? 0 : item.status === "heard" ? 1 : item.status === "deferred" || item.status === "continued" ? 2 : 3;
   return <aside className="detail">
     <div className="kicker">{item.kind} · resolver confidence {item.confidence}%</div>
     <h2>{item.title}</h2>
@@ -67,15 +69,31 @@ function Detail({ item }: { item: Item }) {
 }
 
 function App() {
-  const [selected, setSelected] = useState(items[0]);
+  const [items, setItems] = useState(fallbackItems);
+  const [selected, setSelected] = useState(fallbackItems[0]);
   const [saved, setSaved] = useState(false);
   const [showMethod, setShowMethod] = useState(false);
+  useEffect(() => {
+    const endpoint = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+    fetch(`${endpoint}/items`)
+      .then((response) => response.ok ? response.json() : Promise.reject(response.statusText))
+      .then((records: ApiItem[]) => {
+        if (!records.length) return;
+        const hydrated = records.map((record, index) => {
+          const presentation = fallbackItems.find((item) => item.address === record.address) ?? fallbackItems[index % fallbackItems.length];
+          return { ...presentation, ...record, kind: record.category.replace("_", " "), date: record.lifecycle?.at(-1)?.date ?? presentation.date, excerpt: record.evidence, source: "CB6 source record" };
+        });
+        setItems(hydrated);
+        setSelected(hydrated[0]);
+      })
+      .catch(() => undefined);
+  }, []);
   return <main>
     <header><a className="logo" href="#top">QUORUM</a><span className="strap">Civic decision intelligence</span><nav><a className="selected" href="#map">Map</a><a href="#alerts">Alerts <sup>1</sup></a><button onClick={() => setShowMethod(!showMethod)}>Methodology</button></nav><button className="cta" onClick={() => setSaved(true)}>{saved ? "ADDRESS SAVED" : "SAVE AN ADDRESS"}</button></header>
     {showMethod && <div className="method" role="status">Every connection shown here carries a document excerpt, civic identifier, and confidence score. Alerts require a high-confidence place match and a decision-stage change.</div>}
     <section className="hero" id="top"><h1>WHAT’S DECIDING</h1><p>NEAR YOUR<br />ADDRESS</p></section>
-    <section className="workspace" id="map"><Detail item={selected} /><MapCanvas selected={selected} onSelect={setSelected} /><aside className="manifesto"><h2>DECISIONS HAPPEN NEAR YOU.</h2><p>Every marker is a public item entering a decision point in Community Board 6.</p><div><b>01 / Linked</b><p>Case IDs, named projects, and addresses are resolved into one civic record.</p></div><div><b>02 / Explained</b><p>Open the evidence trail before you decide whether it matters.</p></div><div><b>03 / Watched</b><p>Saved places receive a signal only when an item actually changes state.</p></div><button className="outline" onClick={() => setSaved(true)}>Watch this place →</button></aside></section>
-    <section className="evidence" id="alerts"><div className="rail-intro"><h2>Evidence rail</h2><p>Documents and records that support every decision.</p><a href="#map">Back to map →</a></div>{docs.map((doc, index) => <button className="doc" key={doc} onClick={() => setSelected(items[index])}><span>▱</span><b>{doc}</b><strong>{index === 0 ? selected.source : `${selected.title} · record ${index + 1}`}</strong><small>{selected.date} · PDF</small></button>)}<button className="all-docs">See all<br />documents →</button></section>
+    <section className="workspace" id="map"><Detail item={selected} /><MapCanvas items={items} selected={selected} onSelect={setSelected} /><aside className="manifesto"><h2>DECISIONS HAPPEN NEAR YOU.</h2><p>Every marker is a public item entering a decision point in Community Board 6.</p><div><b>01 / Linked</b><p>Case IDs, named projects, and addresses are resolved into one civic record.</p></div><div><b>02 / Explained</b><p>Open the evidence trail before you decide whether it matters.</p></div><div><b>03 / Watched</b><p>Saved places receive a signal only when an item actually changes state.</p></div><button className="outline" onClick={() => setSaved(true)}>Watch this place →</button></aside></section>
+    <section className="evidence" id="alerts"><div className="rail-intro"><h2>Evidence rail</h2><p>Documents and records that support every decision.</p><a href="#map">Back to map →</a></div>{docs.map((doc, index) => <button className="doc" key={doc} onClick={() => setSelected(items[index % items.length])}><span>▱</span><b>{doc}</b><strong>{index === 0 ? selected.source : `${selected.title} · record ${index + 1}`}</strong><small>{selected.date} · PDF</small></button>)}<button className="all-docs">See all<br />documents →</button></section>
     <footer>QUORUM / MANHATTAN CB6 / CURATED DEMO SNAPSHOT · All records are public-source civic data.</footer>
   </main>;
 }
