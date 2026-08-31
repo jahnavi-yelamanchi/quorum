@@ -1,618 +1,451 @@
 [
   {
-    "id": "dob-job-103460808",
-    "title": "DOB filing 103460808",
+    "id": "dob-job-121333958",
+    "title": "DOB filing 121333958",
     "category": "development",
-    "address": "405 LEXINGTON AVENUE",
+    "address": "274 1ST AVENUE",
     "status": "closed",
     "confidence": 99,
-    "evidence": "HVAC work as per plans. No change to use, egress or occupancy is involved.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27103460808%27",
+    "evidence": "INSTALL NEW SPRINKLER HEADS AND RELATED PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY. IN CONJUNCTION WITH ALT #1213 33958",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121235859%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-103460808",
-        "date": "2004-03-26",
-        "state": "closed",
-        "excerpt": "HVAC work as per plans. No change to use, egress or occupancy is involved."
-      }
-    ],
-    "aliases": [
-      "dob filing 103460808"
-    ],
-    "case_numbers": [
-      "dob job 103460808"
-    ],
-    "organizations": [
-      "405 lexington l l c",
-      "jasbir bhatia"
-    ],
-    "bbl": "1012970023",
-    "longitude": -73.975966,
-    "latitude": 40.751538,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-104258018",
-    "title": "DOB filing 104258018",
-    "category": "development",
-    "address": "862 2 AVENUE",
-    "status": "scheduled",
-    "confidence": 99,
-    "evidence": "",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27104258018%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-104258018",
-        "date": "2005-10-12",
+        "item_id": "dob-job-121333958",
+        "date": "2014-02-13",
         "state": "scheduled",
-        "excerpt": ""
+        "excerpt": "PLUMBING WORK ASSOCIATED WITH ADDITION OF MANAGEMENT OFFICES IN THE CELLAR AS SHOWN ON DRAWINGS FILED HEREWITH."
+      },
+      {
+        "item_id": "dob-job-121333958",
+        "date": "2015-12-01",
+        "state": "closed",
+        "excerpt": "INSTALL NEW SPRINKLER HEADS AND RELATED PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY. IN CONJUNCTION WITH ALT #1213 33958"
       }
     ],
     "aliases": [
-      "dob filing 104258018"
+      "dob filing 121235859",
+      "dob filing 121333958"
     ],
     "case_numbers": [
-      "dob job 104258018"
+      "dob job 121235859",
+      "dob job 121333958"
     ],
     "organizations": [
-      "brown harris stevens as agent fo",
-      "teddy muliawan"
+      "bpp st owner llc",
+      "james perise",
+      "nejat babur",
+      "st owner lp"
     ],
-    "bbl": "1013390001",
-    "longitude": -73.970263,
-    "latitude": 40.752467,
+    "bbl": "1009720001",
+    "longitude": -73.981457,
+    "latitude": 40.732661,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-104468390",
-    "title": "DOB filing 104468390",
+    "id": "dob-job-121861468",
+    "title": "DOB filing 121861468",
     "category": "development",
-    "address": "234 EAST   18 STREET",
+    "address": "747 3RD AVENUE",
     "status": "closed",
     "confidence": 99,
-    "evidence": "HEREBY FILING FOR PLUMBING AND MECHANICAL WORK AS OER PLANS",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27104468390%27",
+    "evidence": "INSTALL DUCTWORK AND UNITS. REMOVE &amp; REPLACE PLUMBING FIXTURES AND PIPING AS SHOWN ON DRAWINGS FILED HEREWITH.  NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121861468%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-104468390",
-        "date": "2007-09-27",
+        "item_id": "dob-job-121861468",
+        "date": "2014-05-19",
         "state": "closed",
-        "excerpt": "HEREBY FILING FOR PLUMBING AND MECHANICAL WORK AS OER PLANS"
+        "excerpt": "INSTALL DUCTWORK AND UNITS. REMOVE &amp; REPLACE PLUMBING FIXTURES AND PIPING AS SHOWN ON DRAWINGS FILED HEREWITH.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
       }
     ],
     "aliases": [
-      "dob filing 104468390"
+      "dob filing 121861468"
     ],
     "case_numbers": [
-      "dob job 104468390"
+      "dob job 121861468"
     ],
     "organizations": [
-      "david kwalbrun",
-      "n a"
+      "robert concessi",
+      "sage realty corporation as agent"
     ],
-    "bbl": "1008980038",
-    "longitude": -73.984484,
-    "latitude": 40.735409,
+    "bbl": "1013200046",
+    "longitude": -73.972511,
+    "latitude": 40.753409,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-104854944",
-    "title": "DOB filing 104854944",
+    "id": "dob-job-121786585",
+    "title": "DOB filing 121786585",
     "category": "development",
-    "address": "519 LEXINGTON AVENUE",
+    "address": "90 PARK AVENUE",
     "status": "closed",
     "confidence": 99,
-    "evidence": "",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27104854944%27",
+    "evidence": "SPRINKLER CHANGES TO CORE TOILETS ON THE 27TH FLOOR (VORNADO) AS INDICATED ON DRAWINGS.  NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121788967%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-104854944",
-        "date": "2007-10-11",
+        "item_id": "dob-job-121786585",
+        "date": "2014-06-10",
         "state": "closed",
-        "excerpt": ""
+        "excerpt": "MODIFICATION OF THE EXISTING CLASS E FIRE ALARM SYSTEM ON THE 27TH FLOOR (VORNADO) AS INDICATED ON DRAWINGS."
+      },
+      {
+        "item_id": "dob-job-121786585",
+        "date": "2014-07-02",
+        "state": "closed",
+        "excerpt": "MECHANICAL AND PLUMBING CHANGES TO CORE TOILETS ON THE 27TH FLOOR (VORNADO) AS INDICATED ON DRAWINGS.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121786585",
+        "date": "2014-07-02",
+        "state": "closed",
+        "excerpt": "ARCHITECTURAL CHANGES TO CORE TOILETS ON THE 27TH FLOOR (VORNADO) AS INDICATED ON DRAWINGS.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121786585",
+        "date": "2014-10-14",
+        "state": "closed",
+        "excerpt": "SPRINKLER CHANGES TO CORE TOILETS ON THE 27TH FLOOR (VORNADO) AS INDICATED ON DRAWINGS.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
       }
     ],
     "aliases": [
-      "dob filing 104854944"
+      "dob filing 121786585",
+      "dob filing 121788958",
+      "dob filing 121788967"
     ],
     "case_numbers": [
-      "dob job 104854944"
+      "dob job 121786585",
+      "dob job 121788958",
+      "dob job 121788967"
     ],
     "organizations": [
-      "44 lexington assoc llc",
-      "howard tompkin"
+      "charles copeland",
+      "john giuseffi",
+      "vornado office management"
     ],
-    "bbl": "1013037502",
-    "longitude": -73.972936,
-    "latitude": 40.755108,
+    "bbl": "1008690034",
+    "longitude": -73.978955,
+    "latitude": 40.750377,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-120394554",
-    "title": "DOB filing 120394554",
+    "id": "dob-job-121821038",
+    "title": "DOB filing 121821038",
     "category": "development",
-    "address": "215 LEXINGTON AVE",
+    "address": "135 EAST 36TH STREET",
     "status": "closed",
     "confidence": 99,
-    "evidence": "FACADE REPAIR",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27120394554%27",
+    "evidence": "INSTALLATION OF MANUAL ALARM, AUTOMATIC SMOKE DETECTION AND SPRINKLER FIRE ALARM SYSTEM AND COC. POST FIRE SMOKE PURGE.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121821038%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-120394554",
-        "date": "2010-11-18",
+        "item_id": "dob-job-121821038",
+        "date": "2014-07-31",
         "state": "closed",
-        "excerpt": "FACADE REPAIR"
+        "excerpt": "INSTALLATION OF MANUAL ALARM, AUTOMATIC SMOKE DETECTION AND SPRINKLER FIRE ALARM SYSTEM AND COC. POST FIRE SMOKE PURGE."
       }
     ],
     "aliases": [
-      "dob filing 120394554"
+      "dob filing 121821038"
     ],
     "case_numbers": [
-      "dob job 120394554"
+      "dob job 121821038"
     ],
     "organizations": [
-      "avishay mazor",
-      "cassidy turley"
+      "david lau",
+      "mission of rep of namibia"
     ],
-    "bbl": "1008887502",
-    "longitude": -73.980479,
-    "latitude": 40.745349,
+    "bbl": "1008920019",
+    "longitude": -73.97901,
+    "latitude": 40.747789,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-140123097",
-    "title": "DOB filing 140123097",
+    "id": "dob-job-121812529",
+    "title": "DOB filing 121812529",
     "category": "development",
-    "address": "1070 SECOND AVENUE",
-    "status": "scheduled",
-    "confidence": 99,
-    "evidence": "REPAIR FIRE DAMAGED FIRST FLOOR CEILING AND ROOF. REPLACE FIRE DAMAGED BEAMS AND INSTALL NEW HVAC ON ROOF. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27140123097%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-140123097",
-        "date": "2013-10-09",
-        "state": "scheduled",
-        "excerpt": "REPAIR FIRE DAMAGED FIRST FLOOR CEILING AND ROOF. REPLACE FIRE DAMAGED BEAMS AND INSTALL NEW HVAC ON ROOF. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
-      }
-    ],
-    "aliases": [
-      "dob filing 140123097"
-    ],
-    "case_numbers": [
-      "dob job 140123097"
-    ],
-    "organizations": [
-      "paul gregory",
-      "rundin management co inc"
-    ],
-    "bbl": "1013490102",
-    "longitude": -73.965615,
-    "latitude": 40.758847,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-121973098",
-    "title": "DOB filing 121973098",
-    "category": "development",
-    "address": "275 MADISON AVENUE",
-    "status": "scheduled",
-    "confidence": 99,
-    "evidence": "INSTALL DUCTWORK.  REPLACE PLUMBING FIXTURES AND PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121973098%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-121973098",
-        "date": "2014-04-18",
-        "state": "scheduled",
-        "excerpt": "INSTALL DUCTWORK.  REPLACE PLUMBING FIXTURES AND PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
-      }
-    ],
-    "aliases": [
-      "dob filing 121973098"
-    ],
-    "case_numbers": [
-      "dob job 121973098"
-    ],
-    "organizations": [
-      "gp 275 madison llc",
-      "michael gerazounis"
-    ],
-    "bbl": "1008690054",
-    "longitude": -73.980369,
-    "latitude": 40.751303,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-122037447",
-    "title": "DOB filing 122037447",
-    "category": "development",
-    "address": "900 THIRD AVENUE",
-    "status": "approved",
-    "confidence": 99,
-    "evidence": "REMOVAL AND INSTALLATION OF INTERIOR NON BEARING PARTITIONS AND RELATED FINISHES, MODIFICATIONS TO EXISTING MECHANICAL SYSTEM,  PER PLANS, FILED HEREWITH. NO CHANGE IN USE EGRESS OR OCCUPANCY UNDER THIS APPLICATION.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27122037447%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-122037447",
-        "date": "2014-07-22",
-        "state": "approved",
-        "excerpt": "REMOVAL AND INSTALLATION OF INTERIOR NON BEARING PARTITIONS AND RELATED FINISHES, MODIFICATIONS TO EXISTING MECHANICAL SYSTEM,  PER PLANS, FILED HEREWITH. NO CHANGE IN USE EGRESS OR OCCUPANCY UNDER THIS APPLICATION."
-      }
-    ],
-    "aliases": [
-      "dob filing 122037447"
-    ],
-    "case_numbers": [
-      "dob job 122037447"
-    ],
-    "organizations": [
-      "aafo 1301 properties owner lp",
-      "yue zhou"
-    ],
-    "bbl": "1013090032",
-    "longitude": -73.968759,
-    "latitude": 40.75859,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-121968978",
-    "title": "DOB filing 121968978",
-    "category": "development",
-    "address": "455 EAST 51ST STREET",
+    "address": "562 FIRST AVENUE",
     "status": "closed",
     "confidence": 99,
-    "evidence": "REMOVE AND INSTALL PLUMBING FIXTURES AND RELATED PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121968978%27",
+    "evidence": "HEREWITH FILING FOR FIRE ALARM MODIFICATIONS OF TISCH HOSPITAL RENOVATIONS MRI SUITE(2WEST) AS PER PLANS. NO CHANGE TO USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121807768%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-121968978",
-        "date": "2014-09-11",
+        "item_id": "dob-job-121812529",
+        "date": "2015-08-06",
         "state": "closed",
-        "excerpt": "REMOVE AND INSTALL PLUMBING FIXTURES AND RELATED PIPING AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+        "excerpt": "HEREWITH FILING FOR MECHANICAL/PLUMBING MODIFICATIONS TISCH HOSPITAL MRI SUITE (2WEST) AS PER PLANS. NO CHANGE TO USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121812529",
+        "date": "2016-06-21",
+        "state": "closed",
+        "excerpt": "HEREWITH FILING FOR FIRE ALARM MODIFICATIONS OF TISCH HOSPITAL RENOVATIONS MRI SUITE(2WEST) AS PER PLANS. NO CHANGE TO USE, EGRESS OR OCCUPANCY."
       }
     ],
     "aliases": [
-      "dob filing 121968978"
+      "dob filing 121807768",
+      "dob filing 121812529"
     ],
     "case_numbers": [
-      "dob job 121968978"
+      "dob job 121807768",
+      "dob job 121812529"
     ],
     "organizations": [
-      "alfred sutton",
-      "charles h greenthal mgmt corp"
-    ],
-    "bbl": "1013630020",
-    "longitude": -73.964246,
-    "latitude": 40.753901,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-140126888",
-    "title": "DOB filing 140126888",
-    "category": "development",
-    "address": "369 LEXINGTON AVENUE",
-    "status": "closed",
-    "confidence": 99,
-    "evidence": "FACADE REPAIR (BRICK CRACKS, DETERIORATED BRICK/CONCRETE/ TERR-COTTA ORNAMENTATION WATER-PROOFING)  SURFACE &amp; BRICK JOINTS  AS PER PLAN , NO CHANGE USE , EGRESS AND OCCUPANCY .",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27140126888%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-140126888",
-        "date": "2014-12-01",
-        "state": "closed",
-        "excerpt": "FACADE REPAIR (BRICK CRACKS, DETERIORATED BRICK/CONCRETE/ TERR-COTTA ORNAMENTATION WATER-PROOFING)  SURFACE &amp; BRICK JOINTS  AS PER PLAN , NO CHANGE USE , EGRESS AND OCCUPANCY ."
-      }
-    ],
-    "aliases": [
-      "dob filing 140126888"
-    ],
-    "case_numbers": [
-      "dob job 140126888"
-    ],
-    "organizations": [
-      "gregory switzer",
-      "kensington delaware"
-    ],
-    "bbl": "1012950020",
-    "longitude": -73.976768,
-    "latitude": 40.75044,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-140147446",
-    "title": "DOB filing 140147446",
-    "category": "development",
-    "address": "400 EAST 34 STREET",
-    "status": "closed",
-    "confidence": 99,
-    "evidence": "",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27140147446%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-140147446",
-        "date": "2015-03-16",
-        "state": "closed",
-        "excerpt": ""
-      }
-    ],
-    "aliases": [
-      "dob filing 140147446"
-    ],
-    "case_numbers": [
-      "dob job 140147446"
-    ],
-    "organizations": [
-      "lawrence shapiro",
-      "nyu langone medical center"
+      "brendan weiden",
+      "christopher prochner",
+      "new york university medical cent"
     ],
     "bbl": "1009627501",
-    "longitude": -73.97332,
-    "latitude": 40.743696,
+    "longitude": -73.974432,
+    "latitude": 40.742518,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-121989919",
-    "title": "DOB filing 121989919",
+    "id": "dob-job-121946733",
+    "title": "DOB filing 121946733",
     "category": "development",
-    "address": "1006 FIRST AVENUE",
-    "status": "scheduled",
-    "confidence": 99,
-    "evidence": "",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121989919%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-121989919",
-        "date": "2015-06-30",
-        "state": "scheduled",
-        "excerpt": ""
-      }
-    ],
-    "aliases": [
-      "dob filing 121989919"
-    ],
-    "case_numbers": [
-      "dob job 121989919"
-    ],
-    "organizations": [
-      "john capazzi",
-      "plaa 400 owners corp"
-    ],
-    "bbl": "1013670001",
-    "longitude": -73.963283,
-    "latitude": 40.757576,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-122233699",
-    "title": "DOB filing 122233699",
-    "category": "development",
-    "address": "308 EAST 30TH STREET",
+    "address": "780 THIRD AVENUE",
     "status": "closed",
     "confidence": 99,
-    "evidence": "STRUCTURAL WORK FOR ADDITION ON 3RD FLOOR",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27122233699%27",
+    "evidence": "FILING HEREWITH MECHANICAL AND PLUMBING WORK AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123783254%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-122233699",
-        "date": "2017-09-25",
+        "item_id": "dob-job-121946733",
+        "date": "2016-04-25",
         "state": "closed",
-        "excerpt": "STRUCTURAL WORK FOR ADDITION ON 3RD FLOOR"
+        "excerpt": "FILING HEREWITH MECHANICAL AND PLUMBING WORK AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121946733",
+        "date": "2020-06-19",
+        "state": "closed",
+        "excerpt": "FILING HEREWITH MECHANICAL AND PLUMBING WORK AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
       }
     ],
     "aliases": [
-      "dob filing 122233699"
+      "dob filing 121946733",
+      "dob filing 123783254"
     ],
     "case_numbers": [
-      "dob job 122233699"
+      "dob job 121946733",
+      "dob job 123783254"
     ],
     "organizations": [
-      "junhui jia",
-      "n a"
+      "michael desrochers",
+      "michael gerazounis",
+      "tiaa cref"
     ],
-    "bbl": "1009350055",
-    "longitude": -73.977189,
-    "latitude": 40.742044,
+    "bbl": "1013030033",
+    "longitude": -73.971619,
+    "latitude": 40.754669,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-122751897",
-    "title": "DOB filing 122751897",
+    "id": "dob-job-121945672",
+    "title": "DOB filing 121945672",
     "category": "development",
-    "address": "821 1ST AVENUE",
+    "address": "430 EAST 29TH STREET",
     "status": "closed",
     "confidence": 99,
-    "evidence": "",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27122751897%27",
+    "evidence": "INSTALLATION OF MECHANICAL EQUIPMENT AND RELATED DUCTWORK FOR TENANT RENOVATION. INSTALLATION OF PLUMBING FIXTURES AND RELATED PIPING FOR TENANT RENOVATION AS SHOWN ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121945672%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-122751897",
-        "date": "2017-10-18",
+        "item_id": "dob-job-121945672",
+        "date": "2017-05-17",
         "state": "closed",
-        "excerpt": ""
+        "excerpt": "FILING FOR STRUCTURAL FRAMING FOR TENANT RENOVATION AS SHOWN ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      },
+      {
+        "item_id": "dob-job-121945672",
+        "date": "2017-05-17",
+        "state": "closed",
+        "excerpt": "INSTALLATION OF MECHANICAL EQUIPMENT AND RELATED DUCTWORK FOR TENANT RENOVATION. INSTALLATION OF PLUMBING FIXTURES AND RELATED PIPING FOR TENANT RENOVATION AS SHOWN ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
       }
     ],
     "aliases": [
-      "dob filing 122751897"
+      "dob filing 121945672"
     ],
     "case_numbers": [
-      "dob job 122751897"
+      "dob job 121945672"
     ],
     "organizations": [
-      "james feuerborn jr",
-      "turkish consulate general"
+      "are east river science park llc",
+      "david kurten",
+      "joseph krzyzewski jr"
     ],
-    "bbl": "1013380030",
-    "longitude": -73.968084,
-    "latitude": 40.75124,
+    "bbl": "1009627502",
+    "longitude": -73.974368,
+    "latitude": 40.740048,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-123173092",
-    "title": "DOB filing 123173092",
+    "id": "dob-job-121995948",
+    "title": "DOB filing 121995948",
     "category": "development",
-    "address": "333 EAST 55 STREET",
+    "address": "252 EAST 57 STREET",
     "status": "closed",
     "confidence": 99,
-    "evidence": "SUBSEQUENT PLUMBING FILING",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123173092%27",
+    "evidence": "INSTALLATION OF TEMPORARY AIR PRESSURIZED ALARM SYSTEM FOR DRY STANDPIPE SYSTEM DURING CONSTRUCTION FILED IN CONJUCTION WITH NB#121328321",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27121995948%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-123173092",
-        "date": "2018-11-26",
+        "item_id": "dob-job-121995948",
+        "date": "2018-03-30",
         "state": "closed",
-        "excerpt": "SUBSEQUENT PLUMBING FILING"
+        "excerpt": "INSTALLATION OF TEMPORARY AIR PRESSURIZED ALARM SYSTEM FOR DRY STANDPIPE SYSTEM DURING CONSTRUCTION FILED IN CONJUCTION WITH NB#121328321"
       }
     ],
     "aliases": [
-      "dob filing 123173092"
+      "dob filing 121995948"
     ],
     "case_numbers": [
-      "dob job 123173092"
+      "dob job 121995948"
     ],
     "organizations": [
-      "335 e 55 st owners inc c o jc",
-      "john raab"
+      "snowplow llc",
+      "sol schwartz"
     ],
-    "bbl": "1013480016",
-    "longitude": -73.965337,
-    "latitude": 40.757637,
+    "bbl": "1013307502",
+    "longitude": -73.965719,
+    "latitude": 40.758738,
     "geo_confidence": 99
   },
   {
-    "id": "dob-job-123417784",
-    "title": "DOB filing 123417784",
+    "id": "dob-job-123837722",
+    "title": "DOB filing 123837722",
+    "category": "development",
+    "address": "777 3RD AVENUE",
+    "status": "closed",
+    "confidence": 99,
+    "evidence": "MODIFY DUCTWORK AS SHOWN ON DRAWINGS FILED HEREWITH.  NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123837722%27",
+    "lifecycle": [
+      {
+        "item_id": "dob-job-123837722",
+        "date": "2020-01-10",
+        "state": "closed",
+        "excerpt": "MODIFY DUCTWORK AS SHOWN ON DRAWINGS FILED HEREWITH.  NO CHANGE IN USE, EGRESS OR OCCUPANCY."
+      }
+    ],
+    "aliases": [
+      "dob filing 123837722"
+    ],
+    "case_numbers": [
+      "dob job 123837722"
+    ],
+    "organizations": [
+      "arthur metzler",
+      "sage realty corporation"
+    ],
+    "bbl": "1013220001",
+    "longitude": -73.971598,
+    "latitude": 40.75466,
+    "geo_confidence": 99
+  },
+  {
+    "id": "dob-job-123253353",
+    "title": "DOB filing 123253353",
+    "category": "development",
+    "address": "845 THIRD AVENUE",
+    "status": "closed",
+    "confidence": 99,
+    "evidence": "FILING FOR MECHANICAL, PLUMBING, AND SPRINKLER WORK ASSOCIATED WITH INTERIOR RENO OF 14TH FLOOR FOR PRE-BUILT OFFICE SPACE AS PER PLANS SUBMITTED HEREWITH. NO CHANGE TO USE, EGRESS, OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123253353%27",
+    "lifecycle": [
+      {
+        "item_id": "dob-job-123253353",
+        "date": "2020-04-07",
+        "state": "closed",
+        "excerpt": "FILING FOR MECHANICAL, PLUMBING, AND SPRINKLER WORK ASSOCIATED WITH INTERIOR RENO OF 14TH FLOOR FOR PRE-BUILT OFFICE SPACE AS PER PLANS SUBMITTED HEREWITH. NO CHANGE TO USE, EGRESS, OR OCCUPANCY."
+      }
+    ],
+    "aliases": [
+      "dob filing 123253353"
+    ],
+    "case_numbers": [
+      "dob job 123253353"
+    ],
+    "organizations": [
+      "michael desrochers",
+      "rudin mgmt co inc"
+    ],
+    "bbl": "1013250001",
+    "longitude": -73.970128,
+    "latitude": 40.756688,
+    "geo_confidence": 99
+  },
+  {
+    "id": "dob-job-123782745",
+    "title": "DOB filing 123782745",
+    "category": "development",
+    "address": "435 EAST 52ND STREET",
+    "status": "closed",
+    "confidence": 99,
+    "evidence": "MECHANICAL WORK FILING IN CONJUNCTION APARTMENT RENVOATION. NO CHANGE TO USE, EGRESS OR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123782745%27",
+    "lifecycle": [
+      {
+        "item_id": "dob-job-123782745",
+        "date": "2020-10-07",
+        "state": "closed",
+        "excerpt": "MECHANICAL WORK FILING IN CONJUNCTION APARTMENT RENVOATION. NO CHANGE TO USE, EGRESS OR OCCUPANCY."
+      }
+    ],
+    "aliases": [
+      "dob filing 123782745"
+    ],
+    "case_numbers": [
+      "dob job 123782745"
+    ],
+    "organizations": [
+      "river house realty co inc",
+      "yue zhou"
+    ],
+    "bbl": "1013640022",
+    "longitude": -73.964389,
+    "latitude": 40.754776,
+    "geo_confidence": 99
+  },
+  {
+    "id": "dob-job-123852875",
+    "title": "DOB filing 123852875",
     "category": "development",
     "address": "605 THIRD AVENUE",
     "status": "closed",
     "confidence": 99,
-    "evidence": "MODIFICATIONS TO EXISTING SPRINKLER SYSTEM AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY UNDER THIS APPLICATION.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123417828%27",
+    "evidence": "STRUCTURAL MODIFICATIONS TAKING PLACE BETWEEN THE 26TH &amp; 28TH (CONSTRUCTION / 27TH &amp; 29TH MARKETING) FLOORS AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS NOR OCCUPANCY.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123852875%27",
     "lifecycle": [
       {
-        "item_id": "dob-job-123417784",
-        "date": "2019-05-21",
+        "item_id": "dob-job-123852875",
+        "date": "2021-05-20",
         "state": "closed",
-        "excerpt": "REMOVAL AND INSTALLATION OF INTERIOR NON BEARING PARTITIONS AND RELATED FINISHES AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY UNDER THIS APPLICATION."
+        "excerpt": "MECHANICAL AND PLUMBING MODIFICATIONS TAKING PLACE BETWEEN THE 26TH &amp; 28TH (CONSTRUCTION / 27TH &amp; 29TH MARKETING) FLOORS AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS NOR OCCUPANCY."
       },
       {
-        "item_id": "dob-job-123417784",
-        "date": "2019-06-21",
+        "item_id": "dob-job-123852875",
+        "date": "2021-05-20",
         "state": "closed",
-        "excerpt": "MODIFICATIONS TO EXISTING SPRINKLER SYSTEM AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY UNDER THIS APPLICATION."
+        "excerpt": "STRUCTURAL MODIFICATIONS TAKING PLACE BETWEEN THE 26TH &amp; 28TH (CONSTRUCTION / 27TH &amp; 29TH MARKETING) FLOORS AS PER PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS NOR OCCUPANCY."
       }
     ],
     "aliases": [
-      "dob filing 123417784",
-      "dob filing 123417828"
+      "dob filing 123852875"
     ],
     "case_numbers": [
-      "dob job 123417784",
-      "dob job 123417828"
+      "dob job 123852875"
     ],
     "organizations": [
       "605 third avenue fee llc",
-      "david ford"
+      "bruce lilker",
+      "tinchi lee"
     ],
     "bbl": "1009200012",
     "longitude": -73.975761,
     "latitude": 40.748972,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-123707006",
-    "title": "DOB filing 123707006",
-    "category": "development",
-    "address": "355 LEXINGTON AVENUE",
-    "status": "closed",
-    "confidence": 99,
-    "evidence": "MECHANICAL AND PLUMBING MODIFICATIONS AS INDICATED ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123707006%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-123707006",
-        "date": "2019-10-09",
-        "state": "closed",
-        "excerpt": "MECHANICAL AND PLUMBING MODIFICATIONS AS INDICATED ON PLANS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
-      }
-    ],
-    "aliases": [
-      "dob filing 123707006"
-    ],
-    "case_numbers": [
-      "dob job 123707006"
-    ],
-    "organizations": [
-      "michael webert",
-      "rudin mgmt co aaf 355 lex llc"
-    ],
-    "bbl": "1012950023",
-    "longitude": -73.976739,
-    "latitude": 40.750064,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-123861589",
-    "title": "DOB filing 123861589",
-    "category": "development",
-    "address": "511 LEXINGTON AVENUE",
-    "status": "closed",
-    "confidence": 99,
-    "evidence": "FILING FOR INSTALLATION OF PLUMBING AND SPRINKLER FIXTURES RELATED TO BUILD-OUT OF CRUNCH GYM. INSTALLATION OF MECHANICAL DUCT, DIFFUSERS, GRILLES AND ROOFTOP FAN AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27123861589%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-123861589",
-        "date": "2021-08-25",
-        "state": "closed",
-        "excerpt": "FILING FOR INSTALLATION OF PLUMBING AND SPRINKLER FIXTURES RELATED TO BUILD-OUT OF CRUNCH GYM. INSTALLATION OF MECHANICAL DUCT, DIFFUSERS, GRILLES AND ROOFTOP FAN AS SHOWN ON DRAWINGS FILED HEREWITH. NO CHANGE IN USE, EGRESS OR OCCUPANCY."
-      }
-    ],
-    "aliases": [
-      "dob filing 123861589"
-    ],
-    "case_numbers": [
-      "dob job 123861589"
-    ],
-    "organizations": [
-      "diamondrock hospitality company",
-      "ralph mottola jr"
-    ],
-    "bbl": "1013020051",
-    "longitude": -73.973471,
-    "latitude": 40.75496,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-141004767",
-    "title": "DOB filing 141004767",
-    "category": "development",
-    "address": "327 EAST 22ND STREET",
-    "status": "scheduled",
-    "confidence": 99,
-    "evidence": "PROPOSED BUILDERS PAVEMENT PLAN FOR 50.00' FRONTAGE.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27141004767%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-141004767",
-        "date": "2021-08-26",
-        "state": "scheduled",
-        "excerpt": "PROPOSED BUILDERS PAVEMENT PLAN FOR 50.00' FRONTAGE."
-      }
-    ],
-    "aliases": [
-      "dob filing 141004767"
-    ],
-    "case_numbers": [
-      "dob job 141004767"
-    ],
-    "organizations": [
-      "alan ritchie",
-      "hcpd llc"
-    ],
-    "bbl": "1009287506",
-    "longitude": -73.980615,
-    "latitude": 40.736907,
     "geo_confidence": 99
   }
 ]
