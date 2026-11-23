@@ -114,6 +114,38 @@
     "geo_confidence": 99
   },
   {
+    "id": "dob-job-100803659",
+    "title": "DOB filing 100803659",
+    "category": "development",
+    "address": "336 1 AVENUE",
+    "status": "scheduled",
+    "confidence": 99,
+    "evidence": "INSTALL NEW AIR CONDITIONING UNIT INSTALL NEW DRYWALL FURRING AT EXISTING DEMISING PARTITIONS.NO CHANGE IN USE OCCUPANCY OR EGRESS.",
+    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27100803659%27",
+    "lifecycle": [
+      {
+        "item_id": "dob-job-100803659",
+        "date": "1994-04-08",
+        "state": "scheduled",
+        "excerpt": "INSTALL NEW AIR CONDITIONING UNIT INSTALL NEW DRYWALL FURRING AT EXISTING DEMISING PARTITIONS.NO CHANGE IN USE OCCUPANCY OR EGRESS."
+      }
+    ],
+    "aliases": [
+      "dob filing 100803659"
+    ],
+    "case_numbers": [
+      "dob job 100803659"
+    ],
+    "organizations": [
+      "joseph devita",
+      "met life ins co inc"
+    ],
+    "bbl": "1009720001",
+    "longitude": -73.98001,
+    "latitude": 40.734637,
+    "geo_confidence": 99
+  },
+  {
     "id": "dob-job-100803953",
     "title": "DOB filing 100803953",
     "category": "development",
@@ -175,38 +207,6 @@
     "bbl": "1013720036",
     "longitude": -73.960085,
     "latitude": 40.757986,
-    "geo_confidence": 99
-  },
-  {
-    "id": "dob-job-100803542",
-    "title": "DOB filing 100803542",
-    "category": "development",
-    "address": "163 EAST   33 STREET",
-    "status": "scheduled",
-    "confidence": 99,
-    "evidence": "CONSTRUCT FIRE-RATED BOILER ROOM IN CELLAR AND INSTALL NEW GAS-FIRE STEAM BOILER AND STEAM PIPING IN CELLAR. NO CHANGE IN USE, OCCUPANCY OR EGRESS UNDER THIS APPL. WORK WAS FILED UNDER APPL. #100788836 AND FEES WERE PAID UNDER THAT APPL.",
-    "source_url": "https://data.cityofnewyork.us/resource/ic3t-wcy2.json?%24where=job__%3D%27100803542%27",
-    "lifecycle": [
-      {
-        "item_id": "dob-job-100803542",
-        "date": "1994-04-21",
-        "state": "scheduled",
-        "excerpt": "CONSTRUCT FIRE-RATED BOILER ROOM IN CELLAR AND INSTALL NEW GAS-FIRE STEAM BOILER AND STEAM PIPING IN CELLAR. NO CHANGE IN USE, OCCUPANCY OR EGRESS UNDER THIS APPL. WORK WAS FILED UNDER APPL. #100788836 AND FEES WERE PAID UNDER THAT APPL."
-      }
-    ],
-    "aliases": [
-      "dob filing 100803542"
-    ],
-    "case_numbers": [
-      "dob job 100803542"
-    ],
-    "organizations": [
-      "mark winkelman",
-      "sheinker wasserstein pc"
-    ],
-    "bbl": "1008890034",
-    "longitude": -73.979537,
-    "latitude": 40.745459,
     "geo_confidence": 99
   },
   {
